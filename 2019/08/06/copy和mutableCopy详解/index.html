@@ -5,15 +5,22 @@
   
 
   
-  <title>Hexo</title>
+  <title>copy和mutableCopy详解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Copy只是复制指针的地址，也就是说copy的内容的指针地址和copy后的指针地址相同。  mutableCopy是复制内容，mutableCopy后的内容的指针地址和mutableCopy后的指针地址不同，指向不同的对象了。 1234567NSString *testStr = [NSString stringWithFormat:@&amp;quot;123&amp;quot;];NSString *nor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="copy和mutableCopy详解">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/copy和mutableCopy详解/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Copy只是复制指针的地址，也就是说copy的内容的指针地址和copy后的指针地址相同。  mutableCopy是复制内容，mutableCopy后的内容的指针地址和mutableCopy后的指针地址不同，指向不同的对象了。 1234567NSString *testStr = [NSString stringWithFormat:@&amp;quot;123&amp;quot;];NSString *nor">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/copy和mutableCopy详解/picture1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/06/copy和mutableCopy详解/picture2.png">
+<meta property="og:updated_time" content="2019-08-06T10:01:44.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="copy和mutableCopy详解">
+<meta name="twitter:description" content="Copy只是复制指针的地址，也就是说copy的内容的指针地址和copy后的指针地址相同。  mutableCopy是复制内容，mutableCopy后的内容的指针地址和mutableCopy后的指针地址不同，指向不同的对象了。 1234567NSString *testStr = [NSString stringWithFormat:@&amp;quot;123&amp;quot;];NSString *nor">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/06/copy和mutableCopy详解/picture1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-copy和mutableCopy详解" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-copy和mutableCopy详解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/06/copy和mutableCopy详解/" class="article-date">
   <time datetime="2019-08-06T09:55:06.000Z" itemprop="datePublished">2019-08-06</time>
@@ -75,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/copy和mutableCopy详解/">copy和mutableCopy详解</a>
+    <h1 class="article-title" itemprop="name">
+      copy和mutableCopy详解
     </h1>
   
 
@@ -113,101 +118,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-并发和并行" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/06/并发和并行/" class="article-date">
-  <time datetime="2019-08-06T09:38:03.000Z" itemprop="datePublished">2019-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/并发和并行/">并发和并行</a>
-    </h1>
+    <a href="/2019/08/06/并发和并行/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">并发和并行</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><p>并发是一种程序的结构，它可以使多个操作可以在重叠的时间段内进行。可以是同时进行，也可以是类似下面这种形式进行<br><img src="/2019/08/06/并发和并行/picture1.png" alt></p>
-<h2 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h2><p>并行是指程序运行的状态，即是多个程序同时运行的状态。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>并发包括并行，单核单线程无法支持并行，但可以支持并发。</p>
-<h1 id="线程和进程"><a href="#线程和进程" class="headerlink" title="线程和进程"></a>线程和进程</h1><p>单核cpu下只能操作单个进程单个线程，由于cpu操作单个任务速度非常快，由于支持并发所以造成同时执行的错觉。</p>
-<p>过多的线程同时运行，可能会造成切换线程耗费过多cpu资源导致效率降低，因此多线程解决的不是高效，而是能支持多个任务同时执行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/并发和并行/" data-id="cjyznnquh0002j9ownyctzx4r" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/06/hello-world/" class="article-date">
-  <time datetime="2019-08-06T07:49:15.694Z" itemprop="datePublished">2019-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/hello-world/" data-id="cjyznnquf0001j9owrsydj6tt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
